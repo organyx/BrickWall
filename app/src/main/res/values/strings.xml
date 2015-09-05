@@ -14,4 +14,6 @@
     <string name="score3">3. User3 &#8211; 84</string>
     <string name="score4">4. User4 &#8211; 19</string>
     <string name="copy">&#169; VIA &#8211; MOB&#8211;I1</string>
+    <string name="back">Back</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
 </resources>

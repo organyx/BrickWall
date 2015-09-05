@@ -99,9 +99,11 @@
             android:layout_alignParentBottom="true"
             >
             <ImageView
+                android:id="@+id/btnInfo"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:src="@drawable/blood_info"/>
+                android:src="@drawable/blood_info"
+                android:onClick="onBtnInfoClick"/>
             <ImageView
                 android:layout_width="80dp"
                 android:layout_height="80dp"
