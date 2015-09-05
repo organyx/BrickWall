@@ -1,9 +1,14 @@
 package com.example.aleks.brickwall;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class ColorPickerActivity extends AppCompatActivity {
 
@@ -11,6 +16,18 @@ public class ColorPickerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_picker);
+
+        Bundle myBundle = getIntent().getExtras();
+        if(myBundle!=null && myBundle.containsKey(MainActivity.CONSTANT_COLOR))
+        {
+            int color = myBundle.getInt(MainActivity.CONSTANT_COLOR);
+            Toast.makeText(this, "Color: "+color, Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            Toast.makeText(this, "No Color", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     @Override
@@ -34,4 +51,57 @@ public class ColorPickerActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void onBtnRedClick(View view) {
+        boolean good = true;
+        if (good)
+        {
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra(MainActivity.CONSTANT_COLOR_RETURN, "#FF0000");
+            Log.d("COLOR_PICKER", "RETURN COLOR btnRed " + returnIntent.getStringExtra(MainActivity.CONSTANT_COLOR_RETURN));
+            setResult(RESULT_OK, returnIntent);
+        }
+        else
+        {
+            Intent returnIntent = new Intent();
+            setResult(RESULT_CANCELED, returnIntent);
+        }
+        finish();
+    }
+
+    public void onBtnGreenClick(View view) {
+        boolean good = true;
+        if (good)
+        {
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra(MainActivity.CONSTANT_COLOR_RETURN, "#33CC33");
+            Log.d("COLOR_PICKER", "RETURN COLOR btnGreen " + returnIntent.getStringExtra(MainActivity.CONSTANT_COLOR_RETURN));
+            setResult(RESULT_OK, returnIntent);
+        }
+        else
+        {
+            Intent returnIntent = new Intent();
+            setResult(RESULT_CANCELED, returnIntent);
+        }
+        finish();
+    }
+
+    public void onBtnBlueClick(View view) {
+        boolean good = true;
+        if (good)
+        {
+            Intent returnIntent = new Intent();
+            returnIntent.putExtra(MainActivity.CONSTANT_COLOR_RETURN, "#0099FF");
+            Log.d("COLOR_PICKER", "RETURN COLOR btnBlue " + returnIntent.getStringExtra(MainActivity.CONSTANT_COLOR_RETURN));
+            setResult(RESULT_OK, returnIntent);
+        }
+        else
+        {
+            Intent returnIntent = new Intent();
+            setResult(RESULT_CANCELED, returnIntent);
+        }
+        finish();
+    }
+
+
 }

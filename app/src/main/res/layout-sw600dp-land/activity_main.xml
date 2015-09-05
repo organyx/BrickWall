@@ -105,9 +105,11 @@
                 android:src="@drawable/blood_info"
                 android:onClick="onBtnInfoClick"/>
             <ImageView
+                android:id="@+id/btnSound"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
-                android:src="@drawable/blood_sound"/>
+                android:src="@drawable/blood_sound"
+                android:onClick="onBtnSoundClick"/>
         </LinearLayout>
 
     </RelativeLayout>
