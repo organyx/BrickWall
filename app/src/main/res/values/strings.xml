@@ -3,6 +3,7 @@
     <string name="about_activity_title">About this App</string>
     <string name="color_picker_activity_title">Color Picker</string>
     <string name="mail_activity_title">Mail me something</string>
+    <string name="web_activity_title">Browse the Web</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_about">AboutActivity</string>
@@ -23,4 +24,5 @@
     <string name="message">Message</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="title_activity_mail">MailActivity</string>
+    <string name="title_activity_web">WebActivity</string>
 </resources>

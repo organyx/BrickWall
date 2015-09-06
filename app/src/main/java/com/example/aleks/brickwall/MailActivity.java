@@ -3,6 +3,7 @@ package com.example.aleks.brickwall;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,15 +49,17 @@ public class MailActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onBtnSendClick(View view) {
+    public void onBtnSendEmailClick(View view) {
         String email = etEmail.getText().toString();
         String subject = etSubject.getText().toString();
         String message = etMessage.getText().toString();
         Intent implicitEmailIntent = new Intent(Intent.ACTION_SEND);
 //        implicitEmailIntent.setType(HTTP.PLAIN_TEXT_TYPE);
-        implicitEmailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {email});
+        implicitEmailIntent.setType("text/plain");
+        implicitEmailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
         implicitEmailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         implicitEmailIntent.putExtra(Intent.EXTRA_TEXT, message);
-
+        startActivity(implicitEmailIntent);
+        Log.d("btnSendEmail", "btnSendEmail has been clicked");
     }
 }

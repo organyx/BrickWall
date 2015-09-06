@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:text="@string/send"
             android:id="@+id/btnSendEmail"
-            android:onClick="onBtnSendClick"
+            android:onClick="onBtnSendEmailClick"
             />
     </LinearLayout>
 </RelativeLayout>

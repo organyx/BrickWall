@@ -135,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onBtnTwClick(View view) {
+        Intent webIntent = new Intent(MainActivity.this, WebActivity.class);
+        startActivity(webIntent);
     }
 
     public void onBtnFbClick(View view) {
