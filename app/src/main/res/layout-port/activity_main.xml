@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:src="@drawable/logo_bash"/>
     </LinearLayout>
     <LinearLayout
@@ -49,13 +49,17 @@
         android:layout_alignParentEnd="true"
         android:gravity="bottom">
         <ImageView
+            android:id="@+id/btnFacebook"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/blood_facebook"/>
+            android:src="@drawable/blood_facebook"
+            android:onClick="onBtnFbClick"/>
         <ImageView
+            android:id="@+id/btnTwitter"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/blood_twitter"/>
+            android:src="@drawable/blood_twitter"
+            android:onClick="onBtnTwClick"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/layoutCopy"

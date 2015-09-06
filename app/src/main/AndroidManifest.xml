@@ -24,6 +24,17 @@
             android:name=".ColorPickerActivity"
             android:label="@string/color_picker_activity_title" >
         </activity>
+        <activity
+            android:name=".MailActivity"
+            android:label="@string/mail_activity_title" >
+            <!-- This activity handles "SEND" actions with text data -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SAVED_COLOR = "SAVED_COLOR";
 
     private TextView tvRecordsTitle;
+    private TextView tvScore1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("onCreate_MAIN", "======== onCreate has started. ========");
         tvRecordsTitle = (TextView)findViewById(R.id.tvRecordsTitle);
-
+        tvScore1 = (TextView)findViewById(R.id.tvScore1);
         Toast.makeText(this, "Current_COLOR: "+String.format("#%06X", (0xFFFFFF & tvRecordsTitle.getCurrentTextColor())), Toast.LENGTH_LONG).show();
     }
 
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 String returnValue  = data.getExtras().getString(CONSTANT_COLOR_RETURN);
                 Toast.makeText(this, "Result: "+returnValue, Toast.LENGTH_LONG).show();
                 tvRecordsTitle.setTextColor(Color.parseColor(returnValue));
+                tvScore1.setTextColor(Color.parseColor(returnValue));
             }
         }
     }
@@ -130,5 +132,13 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onDestroy();
         Log.d("onDestroy_MAIN", "======== onDestroy has started. ========");
+    }
+
+    public void onBtnTwClick(View view) {
+    }
+
+    public void onBtnFbClick(View view) {
+        Intent mailIntent = new Intent(MainActivity.this, MailActivity.class);
+        startActivity(mailIntent);
     }
 }
