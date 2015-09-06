@@ -14,105 +14,102 @@
             android:layout_height="150dp"
             android:src="@drawable/logo_bash"/>
     </LinearLayout>
-    <RelativeLayout
-        android:id="@+id/layoutLeft"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:id="@+id/layoutTable"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/layoutLogo"
+        android:background="@drawable/borders"
+        android:padding = "12dp"
+
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:gravity="bottom"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_centerInParent="true"
+        android:weightSum="5"
         >
-        <TableLayout
-            android:id="@+id/layoutTable"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borders"
-            android:padding="12dp"
-            android:layout_centerHorizontal="true"
-            android:weightSum="5"
+        <TableRow
+            android:background="@drawable/border_bottom"
+            android:gravity="center"
+            android:layout_weight="1"
             >
-            <TableRow
-                android:background="@drawable/border_bottom"
-                android:gravity="center"
-                android:layout_weight="1"
-                >
-                <TextView
-                    android:id="@+id/tvRecordsTitle"
-                    android:text="@string/recordsTitle"
-                    android:textSize="40sp"
-                    android:layout_gravity="center"
-                    android:textAllCaps="true"
-                    android:textColor="@color/red"
+            <TextView
+                android:id="@+id/tvRecordsTitle"
+                android:text="@string/recordsTitle"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/red"
+                />
+        </TableRow>
+        <TableRow
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvScore1"
+                android:text="@string/score1"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:textColor="@color/red"/>
+        </TableRow>
+        <TableRow
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvScore2"
+                android:text="@string/score2"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:textColor="@color/red"/>
+        </TableRow>
+        <TableRow
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvScore3"
+                android:text="@string/score3"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:textColor="@color/red"/>
+        </TableRow>
+        <TableRow
+            android:gravity="center"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tvScore4"
+                android:text="@string/score4"
+                android:textSize="24sp"
+                android:textAllCaps="true"
+                android:textColor="@color/red"/>
+        </TableRow>
 
-                    />
-            </TableRow>
-            <TableRow
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/tvScore1"
-                    android:text="@string/score1"
-                    android:textSize="30sp"
-                    android:textAllCaps="true"
-                    android:textColor="@color/red"/>
-            </TableRow>
-            <TableRow
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/tvScore2"
-                    android:text="@string/score2"
-                    android:textSize="30sp"
-                    android:textAllCaps="true"
-                    android:textColor="@color/red"/>
-            </TableRow>
-            <TableRow
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/tvScore3"
-                    android:text="@string/score3"
-                    android:textSize="30sp"
-                    android:textAllCaps="true"
-                    android:textColor="@color/red"/>
-            </TableRow>
-            <TableRow
-                android:gravity="center"
-                android:layout_weight="1">
-                <TextView
-                    android:id="@+id/tvScore4"
-                    android:text="@string/score4"
-                    android:textSize="30sp"
-                    android:textAllCaps="true"
-                    android:textColor="@color/red"/>
-            </TableRow>
-        </TableLayout>
-        <LinearLayout
-            android:id="@+id/layoutLeftBottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/layoutTable"
-
-            >
-            <ImageView
-                android:id="@+id/btnInfo"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:src="@drawable/blood_info"
-                android:onClick="onBtnInfoClick"/>
-            <ImageView
-                android:id="@+id/btnSound"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:src="@drawable/blood_sound"
-                android:onClick="onBtnSoundClick"/>
-        </LinearLayout>
-
-    </RelativeLayout>
+    </TableLayout>
+    <LinearLayout
+        android:id="@+id/layoutLeftBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/layoutTable"
+        android:layout_above="@+id/layoutCopy"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        >
+        <ImageView
+            android:id="@+id/btnInfo"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/blood_info"
+            android:onClick="onBtnInfoClick"/>
+        <ImageView
+            android:id="@+id/btnSound"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/blood_sound"
+            android:onClick="onBtnSoundClick"/>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/layoutRight"
         android:layout_width="wrap_content"
@@ -161,8 +158,8 @@
         >
         <ImageView
             android:id="@+id/btnBash"
-            android:layout_width="480dp"
-            android:layout_height="480dp"
+            android:layout_width="460dp"
+            android:layout_height="460dp"
             android:layout_marginTop="-20dp"
             android:layout_marginBottom="-20dp"
             android:src="@drawable/blood_bash"/>

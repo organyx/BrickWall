@@ -95,9 +95,13 @@
             android:layout_marginTop="25dp"
             android:layout_height="fill_parent"
             android:background="@drawable/borders"
-            android:padding="12dp"
+            android:paddingTop="4dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp"
             android:layout_below="@+id/btnBash"
             android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
             android:weightSum="5"
             >
             <TableRow

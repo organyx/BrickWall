@@ -84,20 +84,21 @@
         >
         <ImageView
             android:id="@+id/btnBash"
-            android:layout_width="480dp"
-            android:layout_height="480dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="-20dp"
             android:layout_marginBottom="-20dp"
             android:src="@drawable/blood_bash"/>
         <TableLayout
             android:id="@+id/layoutTable"
             android:layout_width="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="22dp"
             android:layout_height="wrap_content"
             android:background="@drawable/borders"
             android:padding="12dp"
-            android:layout_below="@+id/btnBash"
+
             android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
             android:weightSum="5"
             >
             <TableRow
@@ -108,7 +109,7 @@
                 <TextView
                     android:id="@+id/tvRecordsTitle"
                     android:text="@string/recordsTitle"
-                    android:textSize="40sp"
+                    android:textSize="34sp"
                     android:layout_gravity="center"
                     android:textAllCaps="true"
                     android:textColor="@color/red"
