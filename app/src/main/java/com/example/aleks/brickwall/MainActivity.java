@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tvRecordsTitle;
     private TextView tvScore1;
+    private TextView tvScore2;
+    private TextView tvScore3;
+    private TextView tvScore4;
+    private TextView tvCopy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d("onCreate_MAIN", "======== onCreate has started. ========");
         tvRecordsTitle = (TextView)findViewById(R.id.tvRecordsTitle);
         tvScore1 = (TextView)findViewById(R.id.tvScore1);
+        tvScore2 = (TextView)findViewById(R.id.tvScore2);
+        tvScore3 = (TextView)findViewById(R.id.tvScore3);
+        tvScore4 = (TextView)findViewById(R.id.tvScore4);
+        tvCopy = (TextView)findViewById(R.id.tvCopy);
+
         Toast.makeText(this, "Current_COLOR: "+String.format("#%06X", (0xFFFFFF & tvRecordsTitle.getCurrentTextColor())), Toast.LENGTH_LONG).show();
     }
 
@@ -67,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
                 String returnValue  = data.getExtras().getString(CONSTANT_COLOR_RETURN);
                 Toast.makeText(this, "Result: "+returnValue, Toast.LENGTH_LONG).show();
                 tvRecordsTitle.setTextColor(Color.parseColor(returnValue));
-                tvScore1.setTextColor(Color.parseColor(returnValue));
+//                tvScore1.setTextColor(Color.parseColor(returnValue));
+                saveData();
             }
         }
     }
@@ -87,10 +97,7 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onResume();
         Log.d("onResume_MAIN", "======== onResume has started. ========");
-        SharedPreferences prefs = getSharedPreferences(SAVED_PREFERENCES, MODE_PRIVATE);
-        String saved_color = prefs.getString(SAVED_COLOR, "#FF0000");
-        tvRecordsTitle.setTextColor(Color.parseColor(saved_color));
-        Toast.makeText(this, "Current_COLOR: "+String.format("#%06X", (0xFFFFFF & tvRecordsTitle.getCurrentTextColor())), Toast.LENGTH_LONG).show();
+        loadData();
     }
 
     @Override
@@ -98,12 +105,32 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onPause();
         Log.d("onPause_MAIN", "======== onPause has started. ========");
+        saveData();
+    }
+
+    private void saveData()
+    {
         SharedPreferences prefs = getSharedPreferences(SAVED_PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         int intColor = tvRecordsTitle.getCurrentTextColor();
         String hexColor = String.format("#%06X", (0xFFFFFF & intColor));
+        Log.d("onPause_SavedHexValue", "Hex Value: " + hexColor);
         editor.putString(SAVED_COLOR, hexColor);
         editor.apply();
+    }
+
+    private void loadData()
+    {
+        SharedPreferences prefs = getSharedPreferences(SAVED_PREFERENCES, MODE_PRIVATE);
+        String saved_color = prefs.getString(SAVED_COLOR, "#FF0000");
+        Log.d("onResume_SavedColor", "Hex Value: " + saved_color);
+        tvRecordsTitle.setTextColor(Color.parseColor(saved_color));
+        tvScore1.setTextColor(Color.parseColor(saved_color));
+        tvScore2.setTextColor(Color.parseColor(saved_color));
+        tvScore3.setTextColor(Color.parseColor(saved_color));
+        tvScore4.setTextColor(Color.parseColor(saved_color));
+        tvCopy.setTextColor(Color.parseColor(saved_color));
+        Toast.makeText(this, "Current_COLOR: "+String.format("#%06X", (0xFFFFFF & tvRecordsTitle.getCurrentTextColor())), Toast.LENGTH_LONG).show();
     }
 
     @Override
