@@ -9,7 +9,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/borders"
         >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/infoTitle"
+            android:background="@drawable/thin_border"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_margin="10dp"
+            android:textColor="@color/red"/>
         <Button
             android:id="@+id/btnRed"
             android:layout_width="wrap_content"

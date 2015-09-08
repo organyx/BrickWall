@@ -12,6 +12,7 @@
     <string name="quit">Quit</string>
     <string name="info">Info</string>
     <string name="recordsTitle">Records</string>
+    <string name="infoTitle">Pick a color and see what happens</string>
     <string name="score1">1. User1 &#8211; 160</string>
     <string name="score2">2. User2 &#8211; 149</string>
     <string name="score3">3. User3 &#8211; 84</string>
@@ -23,6 +24,9 @@
     <string name="email">Email</string>
     <string name="message">Message</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="lorem1">Lorem ipsum dolor sit amet, massa mus. Nulla sapiente mollis, duis nunc, eget sed sed. Orci mauris. Mi ut, faucibus eget, auctor eu ullamcorper. Nunc hendrerit sed, hendrerit vulputate. Libero nulla, pretium platea dui, tempor vestibulum eu.</string>
+    <string name="lorem2">Vulputate turpis, ut placerat, donec wisi nulla. Venenatis sit, architecto duis. Turpis dis, fusce lorem, lacinia dolor dolor. Metus condimentum ut. Vitae in wisi, massa libero iaculis, accumsan scelerisque interdum. Lacus odio.</string>
+    <string name="lorem3">Risus in rhoncus. Eu sapien sit. Justo feugiat, vel in id. Quam scelerisque ipsum, ultricies justo, euismod molestie velit. Viverra consectetuer massa. Pharetra eros volutpat, in neque sed, urna bibendum.</string>
     <string name="title_activity_mail">MailActivity</string>
     <string name="title_activity_web">WebActivity</string>
 </resources>

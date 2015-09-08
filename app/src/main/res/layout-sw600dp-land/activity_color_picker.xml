@@ -9,25 +9,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/borders"
         >
-        <Button
-            android:id="@+id/btnRed"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/infoTitle"
+            android:background="@drawable/thin_border"
+            android:padding="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_margin="20dp"
+            android:textColor="@color/red"/>
+        <Button
+            android:id="@+id/btnRed"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:background="@color/red"
             android:onClick="onBtnRedClick"/>
         <Button
             android:id="@+id/btnGreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:background="@color/green"
             android:onClick="onBtnGreenClick"/>
         <Button
             android:id="@+id/btnBlue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
             android:background="@color/blue"
             android:onClick="onBtnBlueClick"/>

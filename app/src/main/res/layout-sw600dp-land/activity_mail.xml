@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -26,10 +26,11 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/email"
+                    android:textSize="22sp"
                     android:gravity="center_horizontal"
                     android:textColor="@color/red"/>
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:ems="10"
@@ -42,10 +43,11 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/subject"
+                    android:textSize="22sp"
                     android:gravity="center_horizontal"
                     android:textColor="@color/red"/>
                 <EditText
-                    android:layout_width="fill_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailSubject"
                     android:id="@+id/etSubject"
@@ -64,12 +66,17 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
+                    android:textSize="22sp"
                     android:text="@string/message"
                     android:textColor="@color/red"/>
                 <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="textLongMessage"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="20000"
+                    android:minLines="5"
+                    android:maxLines="15"
                     android:id="@+id/etMessage"
                     android:layout_marginTop="2dp"
                     android:textColor="@color/white"

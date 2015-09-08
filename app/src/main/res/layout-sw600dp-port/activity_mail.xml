@@ -5,8 +5,8 @@
     android:background="@drawable/portrait_tablet">
     <LinearLayout
         android:id="@+id/mail_activity_center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
         android:orientation="vertical"
         android:layout_centerInParent="true"
         android:gravity="center_horizontal"
@@ -17,9 +17,10 @@
             android:layout_height="wrap_content"
             android:text="@string/email"
             android:gravity="center_horizontal"
+            android:textSize="22sp"
             android:textColor="@color/red"/>
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:text="@string/subject"
             android:gravity="center_horizontal"
+            android:textSize="22sp"
             android:textColor="@color/red"/>
         <EditText
             android:layout_width="fill_parent"
@@ -49,11 +51,16 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/message"
+            android:textSize="22sp"
             android:textColor="@color/red"/>
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="textLongMessage"
+            android:layout_weight="1"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLength="20000"
+            android:minLines="5"
+            android:maxLines="15"
             android:id="@+id/etMessage"
             android:layout_marginTop="2dp"
             android:textColor="@color/white"
