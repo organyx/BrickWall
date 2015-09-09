@@ -1,6 +1,7 @@
 package com.example.aleks.brickwall;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class WebActivity extends AppCompatActivity {
 
     private WebView wvMyWebView;
     private String url;
+//    private WebViewClient myWebViewClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +26,51 @@ public class WebActivity extends AppCompatActivity {
 
         url = "http://www.google.com";
         wvMyWebView = (WebView)findViewById(R.id.wvWebView);
-        wvMyWebView.loadUrl(url);
 
-//        wvMyWebView.setWebViewClient(new WebViewClient());
-//        wvMyWebView.setWebChromeClient(new WebChromeClient());
+        Intent newIntent = this.getIntent();
+        String action = newIntent.getAction();
+        Uri uri = newIntent.getData();
+        Log.i("wafl", "Action: " + action);
+        Log.i("wafl", "Uri: " + uri);
+
+        if (uri != null)
+            url = uri.toString();
+
+        wvMyWebView.loadUrl(url);
+        wvMyWebView.getSettings().setJavaScriptEnabled(true);
+
+        wvMyWebView.setWebViewClient(new WebViewClient()
+//                                     {
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, String url)
+//            {
+//                super.shouldOverrideUrlLoading(view,url);
+////                if(Uri.parse(url).getHost().endsWith("html5rocks.com")) {
+////                    return false;
+////                }
+////
+////                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+////                view.getContext().startActivity(intent);
+//                view.loadUrl(url);
+//                return true;
+//            }
+
+//            @Override
+//            public void onPageStarted(WebView view, String url, Bitmap favicon)
+//            {
+//                super.onPageStarted(view,url,favicon);
+//                Log.d("onPageStared", "=== onPageStared ===");
+//            }
+//
+//            @Override
+//            public void onPageFinished(WebView view, String url)
+//            {
+//                super.onPageFinished(view, url);
+//                Log.d("onPageFinished", "=== onPageFinished ===");
+//            }
+//        }
+        );
+        wvMyWebView.setWebChromeClient(new WebChromeClient());
 
     }
 
@@ -53,11 +96,14 @@ public class WebActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onWvClick(View view) {
-        Intent newIntent = new Intent();
-        String action = newIntent.getAction();
-        Uri uri = newIntent.getData();
-        Log.i("wafl", "Action: " + action);
-        Log.i("wafl", "Uri: " + uri);
+    @Override
+    public void onBackPressed()
+    {
+        if(wvMyWebView.canGoBack()) {
+            wvMyWebView.goBack();
+        } else {
+            super.onBackPressed();
+        }
     }
+
 }
