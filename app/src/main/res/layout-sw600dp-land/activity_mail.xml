@@ -2,35 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/landscape_tablet">
+    android:background="@drawable/landscape_tablet"
+    android:padding="80dp">
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:orientation="vertical"
         android:layout_centerInParent="true"
         android:background="@drawable/borders">
         <LinearLayout
             android:id="@+id/mail_activity_center"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
+            android:layout_weight="3"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:orientation="vertical"
+                android:gravity="center"
                 android:padding="5dp">
                 <TextView
                     android:layout_marginTop="2dp"
-                    android:layout_width="fill_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:text="@string/email"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:textColor="@color/red"/>
                 <EditText
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:ems="10"
@@ -40,14 +44,15 @@
                     android:background="@drawable/thin_border"/>
                 <TextView
                     android:layout_marginTop="2dp"
-                    android:layout_width="fill_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:text="@string/subject"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:textColor="@color/red"/>
                 <EditText
-                    android:layout_width="300dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailSubject"
                     android:id="@+id/etSubject"
@@ -57,26 +62,29 @@
                     />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:orientation="vertical"
+                android:gravity="center"
                 android:padding="5dp">
                 <TextView
                     android:layout_marginTop="2dp"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:textSize="22sp"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
                     android:text="@string/message"
                     android:textColor="@color/red"/>
                 <EditText
-                    android:layout_width="300dp"
-                    android:layout_height="200dp"
+                    android:layout_margin="30dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:inputType="textCapSentences|textMultiLine"
                     android:maxLength="20000"
                     android:minLines="5"
-                    android:maxLines="15"
+                    android:maxLines="25"
                     android:id="@+id/etMessage"
                     android:layout_marginTop="2dp"
                     android:textColor="@color/white"
@@ -85,18 +93,34 @@
             </LinearLayout>
 
         </LinearLayout>
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center">
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:textSize="24sp"
+                android:id="@+id/btnBackFromEmail"
+                android:onClick="onBtnBackFromEmailClick"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="10dp"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/send"
+                android:textSize="24sp"
                 android:id="@+id/btnSendEmail"
                 android:onClick="onBtnSendEmailClick"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
                 />
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>

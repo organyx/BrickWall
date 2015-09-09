@@ -63,12 +63,23 @@
             android:textColor="@color/white"
             android:background="@drawable/thin_border"
              />
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/send"
-            android:id="@+id/btnSendEmail"
-            android:onClick="onBtnSendEmailClick"
-            />
+            android:layout_height="wrap_content" android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send"
+                android:id="@+id/btnSendEmail"
+                android:onClick="onBtnSendEmailClick"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:id="@+id/btnBackFromEmail"
+                android:onClick="onBtnBackFromEmailClick"
+                />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

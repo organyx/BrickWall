@@ -1,44 +1,48 @@
 <resources>
+    //GENERAL
     <string name="app_name">BrickWall</string>
-    <string name="about_activity_title">About this App</string>
-    <string name="color_picker_activity_title">Color Picker</string>
-    <string name="mail_activity_title">Mail me something</string>
-    <string name="web_activity_title">Browse the Web</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_color_picker">ColorPickerActivity</string>
     <string name="bash">Bash the Brick Wall</string>
     <string name="quit">Quit</string>
     <string name="info">Info</string>
+    <string name="back">Back</string>
+    //MAIN ACTIVITY
     <string name="recordsTitle">Records</string>
-    <string name="infoTitle">Pick a color and see what happens</string>
     <string name="score1">1. User1 &#8211; 160</string>
     <string name="score2">2. User2 &#8211; 149</string>
     <string name="score3">3. User3 &#8211; 84</string>
     <string name="score4">4. User4 &#8211; 19</string>
     <string name="copy">&#169; VIA &#8211; MOB&#8211;I1</string>
-    <string name="back">Back</string>
-    <string name="send">Send</string>
-    <string name="subject">Subject</string>
-    <string name="email">Email</string>
-    <string name="message">Message</string>
+    //ABOUT ACTIVITY
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="about_activity_title">About this App</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="lorem1">Lorem ipsum dolor sit amet, massa mus. Nulla sapiente mollis, duis nunc, eget sed sed. Orci mauris. Mi ut, faucibus eget, auctor eu ullamcorper. Nunc hendrerit sed, hendrerit vulputate. Libero nulla, pretium platea dui, tempor vestibulum eu.</string>
     <string name="lorem2">Vulputate turpis, ut placerat, donec wisi nulla. Venenatis sit, architecto duis. Turpis dis, fusce lorem, lacinia dolor dolor. Metus condimentum ut. Vitae in wisi, massa libero iaculis, accumsan scelerisque interdum. Lacus odio.</string>
     <string name="lorem3">Risus in rhoncus. Eu sapien sit. Justo feugiat, vel in id. Quam scelerisque ipsum, ultricies justo, euismod molestie velit. Viverra consectetuer massa. Pharetra eros volutpat, in neque sed, urna bibendum.</string>
+    //COLOR PICKER ACTIVITY
+    <string name="title_activity_color_picker">ColorPickerActivity</string>
+    <string name="color_picker_activity_title">Color Picker</string>
+    <string name="infoTitle">Pick a color and see what happens</string>
+    //MAIL ACTIVITY
     <string name="title_activity_mail">MailActivity</string>
+    <string name="mail_activity_title">Mail me something</string>
+    <string name="send">Send</string>
+    <string name="subject">Subject</string>
+    <string name="email">Email</string>
+    <string name="message">Message</string>
+    //BROWSER ACTIVITY
+    <string name="web_activity_title">Browse the Web</string>
     <string name="title_activity_web">WebActivity</string>
     <string name="http">http://</string>
     <string name="btnGo">GO</string>
-
-
-    <string name="str_exit_message">Exit?</string>
+    <string name="str_exit_message">Do you really want to exit?</string>
     <string name="str_ok">OK</string>
     <string name="str_no">No</string>
     <string name="str_URL">URL:</string>
-    <string name="str_about_message">Android Browser</string>
-    <string name="str_URLbar">Show/Hide URL bar</string>
+    <string name="str_about_message">Android Browser for MOB&#8211;I1</string>
+    <string name="str_URL_bar">Show/Hide URL bar</string>
     <string name="str_About">About</string>
     <string name="str_Exit">Exit</string>
     <string name="str_Backward">Back</string>

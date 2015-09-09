@@ -3,7 +3,6 @@ package com.example.aleks.brickwall;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,20 +60,6 @@ public class WebActivity extends AppCompatActivity {
         wvMyWebView.setWebViewClient(new WebViewClient()
 //                                     {
 //            @Override
-//            public boolean shouldOverrideUrlLoading(WebView view, String url)
-//            {
-//                super.shouldOverrideUrlLoading(view,url);
-////                if(Uri.parse(url).getHost().endsWith("html5rocks.com")) {
-////                    return false;
-////                }
-////
-////                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-////                view.getContext().startActivity(intent);
-//                view.loadUrl(url);
-//                return true;
-//            }
-
-//            @Override
 //            public void onPageStarted(WebView view, String url, Bitmap favicon)
 //            {
 //                super.onPageStarted(view,url,favicon);
@@ -96,8 +81,8 @@ public class WebActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-
-        menu.add(0, MENU_VISIBILITY, 0, R.string.str_URLbar);
+        
+        menu.add(0, MENU_VISIBILITY, 0, R.string.str_URL_bar);
         menu.add(0, MENU_RELOAD, 0, R.string.str_Reload);
         menu.add(0, MENU_BACKFORD, 0, R.string.str_Backward);
         menu.add(0, MENU_FORWARD, 0, R.string.str_Forward);
@@ -123,13 +108,13 @@ public class WebActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case MENU_VISIBILITY:
-                ToggleGotoVisibility();
+                ToggleAddressBarVisibility();
                 break;
             case MENU_ABOUT:
-                openAboutDialog();
+                openAboutBoxInfo();
                 break;
             case MENU_EXIT:
-                openExitDialog();
+                openExitActivityBox();
                 break;
             case MENU_BACKFORD:
                 if(wvMyWebView.canGoBack())
@@ -147,7 +132,7 @@ public class WebActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    void ToggleGotoVisibility()
+    void ToggleAddressBarVisibility()
     {
         if (browserAddressBarLayout.getVisibility() == View.GONE)
         {
@@ -159,7 +144,7 @@ public class WebActivity extends AppCompatActivity {
         }
     }
 
-    private void openAboutDialog()
+    private void openAboutBoxInfo()
     {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.str_About)
@@ -173,7 +158,7 @@ public class WebActivity extends AppCompatActivity {
                 .show();
     }
 
-    private void openExitDialog()
+    private void openExitActivityBox()
     {
         new AlertDialog.Builder(this)
                 .setTitle(R.string.str_Exit)

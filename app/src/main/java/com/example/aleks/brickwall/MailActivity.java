@@ -62,4 +62,8 @@ public class MailActivity extends AppCompatActivity {
         startActivity(implicitEmailIntent);
         Log.d("btnSendEmail", "btnSendEmail has been clicked");
     }
+
+    public void onBtnBackFromEmailClick(View view) {
+        finish();
+    }
 }
