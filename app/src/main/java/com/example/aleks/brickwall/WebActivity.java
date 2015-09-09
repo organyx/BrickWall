@@ -1,5 +1,7 @@
 package com.example.aleks.brickwall;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -14,13 +16,22 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 public class WebActivity extends AppCompatActivity {
 
     private WebView wvMyWebView;
     private EditText etAddressBar;
+    private LinearLayout browserAddressBarLayout;
     private Button btnGo;
     private String url;
+
+    final int MENU_VISIBILITY = 0;
+    final int MENU_ABOUT = 1;
+    final int MENU_EXIT = 2;
+    final int MENU_BACKFORD = 3;
+    final int MENU_RELOAD = 4;
+    final int MENU_FORWARD = 5;
 //    private WebViewClient myWebViewClient;
 
     @Override
@@ -31,6 +42,7 @@ public class WebActivity extends AppCompatActivity {
         url = "http://www.google.com";
         wvMyWebView = (WebView)findViewById(R.id.wvWebView);
         etAddressBar = (EditText)findViewById(R.id.etAddressBar);
+        browserAddressBarLayout = (LinearLayout)findViewById(R.id.browserAddressBarLayout);
         btnGo = (Button)findViewById(R.id.btnGo);
 
         Intent newIntent = this.getIntent();
@@ -43,6 +55,7 @@ public class WebActivity extends AppCompatActivity {
             url = uri.toString();
 
         wvMyWebView.loadUrl(url);
+        etAddressBar.setText(url);
         wvMyWebView.getSettings().setJavaScriptEnabled(true);
 
         wvMyWebView.setWebViewClient(new WebViewClient()
@@ -83,6 +96,14 @@ public class WebActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
+        menu.add(0, MENU_VISIBILITY, 0, R.string.str_URLbar);
+        menu.add(0, MENU_RELOAD, 0, R.string.str_Reload);
+        menu.add(0, MENU_BACKFORD, 0, R.string.str_Backward);
+        menu.add(0, MENU_FORWARD, 0, R.string.str_Forward);
+        menu.add(0, MENU_ABOUT, 0, R.string.str_About);
+        menu.add(0, MENU_EXIT, 0, R.string.str_Exit);
+
         getMenuInflater().inflate(R.menu.menu_web, menu);
         return true;
     }
@@ -99,7 +120,76 @@ public class WebActivity extends AppCompatActivity {
             return true;
         }
 
+        switch(item.getItemId())
+        {
+            case MENU_VISIBILITY:
+                ToggleGotoVisibility();
+                break;
+            case MENU_ABOUT:
+                openAboutDialog();
+                break;
+            case MENU_EXIT:
+                openExitDialog();
+                break;
+            case MENU_BACKFORD:
+                if(wvMyWebView.canGoBack())
+                    wvMyWebView.goBack();
+                break;
+            case MENU_RELOAD:
+                wvMyWebView.reload();
+                break;
+            case MENU_FORWARD:
+                if(wvMyWebView.canGoForward())
+                    wvMyWebView.goForward();
+                break;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    void ToggleGotoVisibility()
+    {
+        if (browserAddressBarLayout.getVisibility() == View.GONE)
+        {
+            browserAddressBarLayout.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            browserAddressBarLayout.setVisibility(View.GONE);
+        }
+    }
+
+    private void openAboutDialog()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.str_About)
+                .setMessage(R.string.str_about_message)
+                .setPositiveButton(R.string.str_ok,
+                        new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialoginterface, int i)
+                            {}
+                        })
+                .show();
+    }
+
+    private void openExitDialog()
+    {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.str_Exit)
+                .setMessage(R.string.str_exit_message)
+                .setNegativeButton(R.string.str_no,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface, int i) {
+                            }
+                        })
+                .setPositiveButton(R.string.str_ok,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialoginterface, int i) {
+                                finish();
+                            }
+                        })
+                .show();
     }
 
     @Override
