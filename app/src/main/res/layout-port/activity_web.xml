@@ -9,11 +9,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@drawable/thin_border"
+        android:weightSum="6"
         >
         <EditText
-            android:id="@+id/addressBar"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/etAddressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/http"
+            android:layout_weight="5"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btnGo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnGo"
+            android:onClick="onBtnGoClick"/>
     </LinearLayout>
     <WebView
         android:id="@+id/wvWebView"

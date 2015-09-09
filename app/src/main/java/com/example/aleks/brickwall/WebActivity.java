@@ -12,10 +12,14 @@ import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class WebActivity extends AppCompatActivity {
 
     private WebView wvMyWebView;
+    private EditText etAddressBar;
+    private Button btnGo;
     private String url;
 //    private WebViewClient myWebViewClient;
 
@@ -26,6 +30,8 @@ public class WebActivity extends AppCompatActivity {
 
         url = "http://www.google.com";
         wvMyWebView = (WebView)findViewById(R.id.wvWebView);
+        etAddressBar = (EditText)findViewById(R.id.etAddressBar);
+        btnGo = (Button)findViewById(R.id.btnGo);
 
         Intent newIntent = this.getIntent();
         String action = newIntent.getAction();
@@ -106,4 +112,7 @@ public class WebActivity extends AppCompatActivity {
         }
     }
 
+    public void onBtnGoClick(View view) {
+        wvMyWebView.loadUrl(etAddressBar.getText().toString());
+    }
 }

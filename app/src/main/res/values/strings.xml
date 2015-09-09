@@ -29,4 +29,6 @@
     <string name="lorem3">Risus in rhoncus. Eu sapien sit. Justo feugiat, vel in id. Quam scelerisque ipsum, ultricies justo, euismod molestie velit. Viverra consectetuer massa. Pharetra eros volutpat, in neque sed, urna bibendum.</string>
     <string name="title_activity_mail">MailActivity</string>
     <string name="title_activity_web">WebActivity</string>
+    <string name="http">http://</string>
+    <string name="btnGo">GO</string>
 </resources>
