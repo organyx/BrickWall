@@ -23,7 +23,7 @@
             android:id="@+id/btnGo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btnGo"
+            android:text="@string/btn_go"
             android:onClick="onBtnGoClick"/>
     </LinearLayout>
     <WebView

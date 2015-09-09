@@ -118,6 +118,7 @@
                     android:id="@+id/tvRecordsTitle"
                     android:text="@string/recordsTitle"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:layout_gravity="center"
                     android:textAllCaps="true"
                     android:textColor="@color/red"
@@ -131,6 +132,7 @@
                     android:id="@+id/tvScore1"
                     android:text="@string/score1"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/red"/>
             </TableRow>
@@ -141,6 +143,7 @@
                     android:id="@+id/tvScore2"
                     android:text="@string/score2"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/red"/>
             </TableRow>
@@ -151,6 +154,7 @@
                     android:id="@+id/tvScore3"
                     android:text="@string/score3"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/red"/>
             </TableRow>
@@ -161,6 +165,7 @@
                     android:id="@+id/tvScore4"
                     android:text="@string/score4"
                     android:textSize="20sp"
+                    android:textStyle="bold"
                     android:textAllCaps="true"
                     android:textColor="@color/red"/>
             </TableRow>

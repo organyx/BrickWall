@@ -26,6 +26,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/email"
+                    android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:textColor="@color/red"/>
                 <EditText
@@ -42,6 +43,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/subject"
+                    android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:textColor="@color/red"/>
                 <EditText
@@ -65,6 +67,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/message"
+                    android:textStyle="bold"
                     android:textColor="@color/red"/>
                 <EditText
                     android:layout_width="200dp"
@@ -82,24 +85,31 @@
             </LinearLayout>
 
         </LinearLayout>
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:gravity="center">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/send"
-                android:id="@+id/btnSendEmail"
-                android:onClick="onBtnSendEmailClick"
-                />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/back"
                 android:id="@+id/btnBackFromEmail"
                 android:onClick="onBtnBackFromEmailClick"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="3dp"
                 />
-        </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send"
+                android:id="@+id/btnSendEmail"
+                android:onClick="onBtnSendEmailClick"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="3dp"
+                />
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

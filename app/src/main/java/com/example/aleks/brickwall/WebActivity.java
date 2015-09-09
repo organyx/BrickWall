@@ -82,12 +82,12 @@ public class WebActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         
-        menu.add(0, MENU_VISIBILITY, 0, R.string.str_URL_bar);
-        menu.add(0, MENU_RELOAD, 0, R.string.str_Reload);
-        menu.add(0, MENU_BACKFORD, 0, R.string.str_Backward);
-        menu.add(0, MENU_FORWARD, 0, R.string.str_Forward);
-        menu.add(0, MENU_ABOUT, 0, R.string.str_About);
-        menu.add(0, MENU_EXIT, 0, R.string.str_Exit);
+        menu.add(0, MENU_VISIBILITY, 0, R.string.wv_url_bar);
+        menu.add(0, MENU_RELOAD, 0, R.string.wv_reload);
+        menu.add(0, MENU_BACKFORD, 0, R.string.wv_back);
+        menu.add(0, MENU_FORWARD, 0, R.string.wv_forward);
+        menu.add(0, MENU_ABOUT, 0, R.string.wv_about);
+        menu.add(0, MENU_EXIT, 0, R.string.wv_exit_title);
 
         getMenuInflater().inflate(R.menu.menu_web, menu);
         return true;
@@ -147,9 +147,9 @@ public class WebActivity extends AppCompatActivity {
     private void openAboutBoxInfo()
     {
         new AlertDialog.Builder(this)
-                .setTitle(R.string.str_About)
-                .setMessage(R.string.str_about_message)
-                .setPositiveButton(R.string.str_ok,
+                .setTitle(R.string.wv_about)
+                .setMessage(R.string.wv_about_msg)
+                .setPositiveButton(R.string.wv_yes,
                         new DialogInterface.OnClickListener()
                         {
                             public void onClick(DialogInterface dialoginterface, int i)
@@ -161,14 +161,14 @@ public class WebActivity extends AppCompatActivity {
     private void openExitActivityBox()
     {
         new AlertDialog.Builder(this)
-                .setTitle(R.string.str_Exit)
-                .setMessage(R.string.str_exit_message)
-                .setNegativeButton(R.string.str_no,
+                .setTitle(R.string.wv_exit_title)
+                .setMessage(R.string.wv_exit)
+                .setNegativeButton(R.string.wv_no,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialoginterface, int i) {
                             }
                         })
-                .setPositiveButton(R.string.str_ok,
+                .setPositiveButton(R.string.wv_yes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialoginterface, int i) {
                                 finish();
