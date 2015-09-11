@@ -62,7 +62,19 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+        switch (item.getItemId())
+        {
+            case R.id.sensors_activity:
+                startSensorsActivity();
+                break;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void startSensorsActivity() {
+        Intent sensorsIntent = new Intent(MainActivity.this, SensorsActivity.class);
+        startActivity(sensorsIntent);
     }
 
     @Override

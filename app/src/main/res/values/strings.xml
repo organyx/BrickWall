@@ -48,4 +48,9 @@
     <string name="wv_back">Back</string>
     <string name="wv_reload">Reload</string>
     <string name="wv_forward">Forward</string>
+    <string name="title_activity_sensors">SensorsActivity</string>
+    //SENSORS ACTIVITY
+    <string name="tv_sensor">Sensor Description</string>
+    <string name="sensors_activity">Sensors</string>
+    <string name="title_activity_compass">CompassActivity</string>
 </resources>
