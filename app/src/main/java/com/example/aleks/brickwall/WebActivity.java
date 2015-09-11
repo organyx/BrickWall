@@ -25,14 +25,6 @@ public class WebActivity extends AppCompatActivity {
     private Button btnGo;
     private String url;
 
-    final int MENU_VISIBILITY = 0;
-    final int MENU_ABOUT = 1;
-    final int MENU_EXIT = 2;
-    final int MENU_BACKFORD = 3;
-    final int MENU_RELOAD = 4;
-    final int MENU_FORWARD = 5;
-//    private WebViewClient myWebViewClient;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,13 +73,6 @@ public class WebActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        
-        menu.add(0, MENU_VISIBILITY, 0, R.string.wv_url_bar);
-        menu.add(0, MENU_RELOAD, 0, R.string.wv_reload);
-        menu.add(0, MENU_BACKFORD, 0, R.string.wv_back);
-        menu.add(0, MENU_FORWARD, 0, R.string.wv_forward);
-        menu.add(0, MENU_ABOUT, 0, R.string.wv_about);
-        menu.add(0, MENU_EXIT, 0, R.string.wv_exit_title);
 
         getMenuInflater().inflate(R.menu.menu_web, menu);
         return true;
@@ -107,23 +92,23 @@ public class WebActivity extends AppCompatActivity {
 
         switch(item.getItemId())
         {
-            case MENU_VISIBILITY:
+            case R.id.menu_visibility:
                 ToggleAddressBarVisibility();
                 break;
-            case MENU_ABOUT:
+            case R.id.menu_about:
                 openAboutBoxInfo();
                 break;
-            case MENU_EXIT:
+            case R.id.menu_exit:
                 openExitActivityBox();
                 break;
-            case MENU_BACKFORD:
+            case R.id.menu_back:
                 if(wvMyWebView.canGoBack())
                     wvMyWebView.goBack();
                 break;
-            case MENU_RELOAD:
+            case R.id.menu_reload:
                 wvMyWebView.reload();
                 break;
-            case MENU_FORWARD:
+            case R.id.menu_forward:
                 if(wvMyWebView.canGoForward())
                     wvMyWebView.goForward();
                 break;

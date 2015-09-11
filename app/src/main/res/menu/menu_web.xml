@@ -2,6 +2,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.aleks.brickwall.WebActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+
+
+    <item android:id="@+id/menu_visibility"
+        android:title="@string/wv_url_bar"
+        android:orderInCategory="1"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/menu_reload"
+        android:title="@string/wv_reload"
+        android:orderInCategory="2"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/menu_back"
+        android:title="@string/wv_back"
+        android:orderInCategory="3"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/menu_forward"
+        android:title="@string/wv_forward"
+        android:orderInCategory="4"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/menu_about"
+        android:title="@string/wv_about"
+        android:orderInCategory="5"
+        app:showAsAction="never"
+        />
+    <item android:id="@+id/menu_exit"
+        android:title="@string/wv_exit_title"
+        android:orderInCategory="6"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 </menu>
