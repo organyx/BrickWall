@@ -7,8 +7,16 @@
         android:orderInCategory="1"
         app:showAsAction="never"
         />
+    <item android:id="@+id/compass_activity"
+        android:title="@string/compass_activity"
+        android:orderInCategory="2"
+        app:showAsAction="never"/>
 
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
 
 </menu>

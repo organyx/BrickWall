@@ -67,9 +67,17 @@ public class MainActivity extends AppCompatActivity {
             case R.id.sensors_activity:
                 startSensorsActivity();
                 break;
+            case R.id.compass_activity:
+                startCompassActivity();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void startCompassActivity() {
+        Intent compassIntent = new Intent(MainActivity.this, CompassActivity.class);
+        startActivity(compassIntent);
     }
 
     private void startSensorsActivity() {
