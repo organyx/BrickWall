@@ -89,10 +89,15 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
             readingMagnometer[2] = event.values[2];
         }
 
+        //float[] rotation2 = rotation.clone();
+        //rotation.clone();
+
         SensorManager.getRotationMatrix(rotation, null, readingAccelerometer, readingMagnometer);
         SensorManager.getOrientation(rotation, orientation);
         float azimuthRadians = orientation[0];
         float azimuthDegrees = -(float) (Math.toDegrees(azimuthRadians) + 360) % 360;
+
+
 
         doAnimation(currentCompassAngle, azimuthDegrees, compassImage);
         currentCompassAngle = azimuthDegrees;

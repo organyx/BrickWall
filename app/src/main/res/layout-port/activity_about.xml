@@ -12,6 +12,7 @@
         android:layout_margin="10dp"
         android:padding="5dp"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/tvLorem1"
             android:layout_width="wrap_content"

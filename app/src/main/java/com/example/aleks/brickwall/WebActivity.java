@@ -39,8 +39,8 @@ public class WebActivity extends AppCompatActivity {
         Intent newIntent = this.getIntent();
         String action = newIntent.getAction();
         Uri uri = newIntent.getData();
-        Log.i("wafl", "Action: " + action);
-        Log.i("wafl", "Uri: " + uri);
+        Log.i("webAction", "Action: " + action);
+        Log.i("webUri", "Uri: " + uri);
 
         if (uri != null)
             url = uri.toString();
